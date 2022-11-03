@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Book Service</span>
+    <div style="width: 15px"></div>
+    <ng-container *ngFor="let item of navItems">
+      <button
+        *ngIf="item.visible"
+        mat-button
+        class="nav-button"
+        [disabled]="!item.enabled"
+        (click)="onClick(item)"
+      >
+        {{ item.caption }}
+      </button>
+    </ng-container>
+    <span class="spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
